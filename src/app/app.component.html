@@ -1,20 +1,67 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
-</div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://github.com/angular/angular-cli/wiki">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
+<div class="container">
+<!-- 	<div class="row">
+		<div class="col-md-12"> -->
+			<form #tvShowForm="ngForm"   (ngSubmit)="tvShowForm.valid && onSave(tvShowForm.value)" novalidate>
+				<div class="row">
+				<div class="col-md-12">
+				<div class="form-group">
+					<input name="id" type="hidden"     [(ngModel)]="id" />  
+					<label>Nome da Série</label>				
+			    	<input name="nome" class="form-control" type="text" #iptNome="ngModel" required [(ngModel)]="nome" />  
+			    	<span class="help-block" *ngIf="!iptNome.valid">* Campo obrigatório</span>
+				</div>
+				</div>
+				</div>  
+				<div class="row">
+				<div class="col-md-12">
+				<div class="form-group">
+					<label>Descrição da Série</label>
+					<textarea class="form-control" name="descricao" type="text" #iptDescricao="ngModel" required minlength="5" [(ngModel)]="descricao"></textarea>
+					<span class="help-block" *ngIf="!iptDescricao.valid">* Campo obrigatório</span>
+				</div>
+				</div>
+				</div>
+				<div class="row align-items-center justify-content-center">
+					<div class="col-md-3">
+					<button type="submit" class="btn btn-primary form-control">{{valbutton}}</button>		
+					</div>
+				</div>
+				
+				
+			</form>   
+<!-- 		</div>
+	</div> -->
+	<br>
+	<table class="table">
+		<thead class="thead-dark">
+			<tr>  
+	    		<td scope="col" class="text-center">Id</td>  
+	    		<td scope="col" class="text-center">Nome da Série</td>  
+	    		<td scope="col" class="text-center">Descrição da Série</td>  
+	    		<td scope="col" class="text-center">Editar</td>  
+	    		<td scope="col" class="text-center">Deletar</td>  
+	  		</tr> 
+		</thead>
+		<tbody>
+			<tr *ngFor="let kk of Repdata;let ind = index">  
+	    		<td scope="row" class="text-center">{{ind + 1}}</td>  
+			    <td class="text-center">{{kk.nome}}</td>  
+	    		<td class="text-center">{{kk.descricao}}</td>  
+	    		<td class="text-center">
+	    			<a (click)="edit(kk)">
+	    				<i class="fas fa-edit"></i>
+	    			</a>
+	    		</td>  
+	    		<td class="text-center">
+	    			<a (click)="delete(kk._id)">
+	    				<i class="fas fa-trash-alt"></i>
+	    			</a>
+	    		</td>  
+	  		</tr>
+		</tbody>
+		
+	</table>
 
+</div>
+
+  

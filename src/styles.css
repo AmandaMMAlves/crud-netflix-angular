@@ -1,1 +1,47 @@
 /* You can add global styles to this file, and also import other style files */
+.navbar-header {
+    float: left;
+    padding: 15px;
+    text-align: center;
+    width: 100%;
+}
+
+.navbar-brand {
+	float:none;
+	color: #c60000 !important;
+	font-size: 3em;
+	font-weight: bolder;
+}
+
+.bg-dark{
+	background-color: #000000e6 !important;
+}
+
+.btn-primary:hover{
+	color: #fff !important;
+	background-color: #c60000 !important;
+	border-color:  #c60000 !important;
+}
+
+.btn-primary{
+	color: #fff !important;
+	background-color: #c60000 !important;
+	border-color:  #c60000 !important;
+}
+
+body {
+	background-color: #e6e6e680 !important;
+	color: #000 !important;
+}
+
+i:hover {
+	cursor: pointer;
+	color: #c60000;
+}
+
+thead{
+	font-weight: bold;
+}
+
+
+
