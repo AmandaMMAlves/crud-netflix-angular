@@ -29,34 +29,34 @@
 	</form>   
 	<br>
 	<table class="table">
-		<thead class="thead-dark">
-			<tr>  
-	    		<td scope="col" class="text-center">Id</td>  
-	    		<td scope="col" class="text-center">Nome da Série</td>  
-	    		<td scope="col" class="text-center">Sinopse</td>  
-	    		<td scope="col" class="text-center">Editar</td>  
-	    		<td scope="col" class="text-center">Deletar</td>  
-	  		</tr> 
-		</thead>
-		<tbody>
-			<tr *ngFor="let kk of Repdata;let ind = index">  
-	    		<td scope="row" class="text-center">{{ind + 1}}</td>  
-			    <td class="text-center">{{kk.nome}}</td>  
-	    		<td class="text-center">{{kk.descricao}}</td>  
-	    		<td class="text-center">
-	    			<a (click)="edit(kk)">
-	    				<i class="fas fa-edit"></i>
-	    			</a>
-	    		</td>  
-	    		<td class="text-center">
-	    			<a (click)="delete(kk._id)">
-	    				<i class="fas fa-trash-alt"></i>
-	    			</a>
-	    		</td>  
-	  		</tr>
-		</tbody>
-		
-	</table>
+	<thead class="thead-dark">
+		<tr>  
+    		<td scope="col" class="text-center">Id</td>  
+    		<td scope="col" class="text-center">Nome da Série</td>  
+    		<td scope="col" class="text-center">Sinopse</td>  
+    		<td scope="col" class="text-center">Editar</td>  
+    		<td scope="col" class="text-center">Deletar</td>  
+  		</tr> 
+	</thead>
+	<tbody>
+		<tr *ngFor="let kk of Repdata;let ind = index">  
+    		<td scope="row" class="text-center">{{ind + 1}}</td>  
+		    <td class="text-center">{{kk.nome}}</td>  
+    		<td class="text-center">{{kk.descricao}}</td>  
+    		<td class="text-center">
+    			<a (click)="edit(kk)">
+    				<i class="fas fa-edit"></i>
+    			</a>
+    		</td>  
+    		<td class="text-center">
+    			<a (click)="delete(kk._id)">
+    				<i class="fas fa-trash-alt"></i>
+    			</a>
+    		</td>  
+  		</tr>
+	</tbody>
+	
+</table>
 
 </div>
 
