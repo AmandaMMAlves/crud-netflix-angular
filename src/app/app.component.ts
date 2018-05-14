@@ -14,7 +14,7 @@ export class AppComponent {
      
   constructor(private newService :CommonService,) {   }  
    Repdata;  
-   valbutton ="Save";  
+   valbutton ="Salvar";  
    
    
 ngOnInit() {    
@@ -26,7 +26,8 @@ onSave = function(tvShow,isValid: boolean) {
   this.newService.saveTvShow(tvShow)  
   .subscribe(data =>  {  alert(data.data);  
        
-    this.ngOnInit(); 
+    this.ngOnInit();
+    this.clean();
  
   }   
   , error => this.errorMessage = error )  
@@ -36,8 +37,14 @@ edit = function(kk) {
 	this.id = kk._id;  
 	this.nome= kk.nome;  
 	this.descricao = kk.descricao;  
-	this.valbutton ="Update";  
-}  
+	this.valbutton ="Alterar";  
+}
+
+clean = function()  {
+	this.id = "";  
+	this.nome= "";  
+	this.descricao = "";  
+}
   
 delete = function(id) {  
 this.newService.deleteTvShow(id)  

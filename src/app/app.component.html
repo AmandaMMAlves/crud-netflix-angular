@@ -1,43 +1,39 @@
 <div class="container">
-<!-- 	<div class="row">
-		<div class="col-md-12"> -->
-			<form #tvShowForm="ngForm"   (ngSubmit)="tvShowForm.valid && onSave(tvShowForm.value)" novalidate>
-				<div class="row">
-				<div class="col-md-12">
-				<div class="form-group">
-					<input name="id" type="hidden"     [(ngModel)]="id" />  
-					<label>Nome da Série</label>				
-			    	<input name="nome" class="form-control" type="text" #iptNome="ngModel" required [(ngModel)]="nome" />  
-			    	<span class="help-block" *ngIf="!iptNome.valid">* Campo obrigatório</span>
-				</div>
-				</div>
-				</div>  
-				<div class="row">
-				<div class="col-md-12">
-				<div class="form-group">
-					<label>Descrição da Série</label>
-					<textarea class="form-control" name="descricao" type="text" #iptDescricao="ngModel" required minlength="5" [(ngModel)]="descricao"></textarea>
-					<span class="help-block" *ngIf="!iptDescricao.valid">* Campo obrigatório</span>
-				</div>
-				</div>
-				</div>
-				<div class="row align-items-center justify-content-center">
-					<div class="col-md-3">
-					<button type="submit" class="btn btn-primary form-control">{{valbutton}}</button>		
-					</div>
-				</div>
-				
-				
-			</form>   
-<!-- 		</div>
-	</div> -->
+	<form #tvShowForm="ngForm"   (ngSubmit)="tvShowForm.valid && onSave(tvShowForm.value)" novalidate>
+		<div class="row">
+		<div class="col-md-12">
+		<div class="form-group">
+			<input name="id" type="hidden"     [(ngModel)]="id" />  
+			<label>Nome da Série</label>				
+	    	<input name="nome" class="form-control" type="text" #iptNome="ngModel" id="nome" required [(ngModel)]="nome" />  
+	    	<span class="help-block" *ngIf="!iptNome.valid">* Campo obrigatório</span>
+		</div>
+		</div>
+		</div>  
+		<div class="row">
+		<div class="col-md-12">
+		<div class="form-group">
+			<label>Sinopse</label>
+			<textarea class="form-control" name="descricao" id="descricao" type="text" #iptDescricao="ngModel" required minlength="5" [(ngModel)]="descricao"></textarea>
+			<span class="help-block" *ngIf="!iptDescricao.valid">* Campo obrigatório</span>
+		</div>
+		</div>
+		</div>
+		<div class="row align-items-center justify-content-center">
+			<div class="col-md-3">
+			<button type="submit" class="btn btn-primary form-control">{{valbutton}}</button>		
+			</div>
+		</div>
+		
+		
+	</form>   
 	<br>
 	<table class="table">
 		<thead class="thead-dark">
 			<tr>  
 	    		<td scope="col" class="text-center">Id</td>  
 	    		<td scope="col" class="text-center">Nome da Série</td>  
-	    		<td scope="col" class="text-center">Descrição da Série</td>  
+	    		<td scope="col" class="text-center">Sinopse</td>  
 	    		<td scope="col" class="text-center">Editar</td>  
 	    		<td scope="col" class="text-center">Deletar</td>  
 	  		</tr> 

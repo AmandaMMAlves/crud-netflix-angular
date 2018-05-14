@@ -35,17 +35,18 @@
       
     app.post("/api/SaveTvShow",function(req,res){   
      var mod = new model(req.body);  
-     if(req.body.mode =="Save")  
+     if(req.body.mode =="Salvar")  
      {  
         mod.save(function(err,data){  
-          if(err){  
-             res.send(err);                
-          }  
-          else{        
-              res.send({data:"Record has been Inserted..!!"});  
-          }  
-     });  
-    }  
+            if(err){  
+               res.send(err);                
+            }  
+            else{        
+                res.send({data:"Item do catálogo salvo com sucesso!!!"});  
+            }  
+       });
+
+     }  
     else   
     {  
      model.findByIdAndUpdate(req.body.id,  {nome: req.body.nome, descricao: req.body.descricao},  
@@ -54,7 +55,7 @@
        res.send(err);         
        }  
        else{        
-              res.send({data:"Record has been Updated..!!"});  
+              res.send({data:"Item do catálogo alterado com sucesso!!!"});  
          }  
      });  
       
@@ -68,7 +69,7 @@
              res.send(err);    
          }    
          else{      
-                res.send({data:"Record has been Deleted..!!"});               
+                res.send({data:"Item do catálogo removido!"});               
             }    
      });    
        })  
